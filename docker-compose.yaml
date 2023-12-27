@@ -1,0 +1,11 @@
+version: '3'
+services:
+  survey-bot:
+    restart: always
+    image: survey-bot:latest
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    container_name: telegram_survey_bot
