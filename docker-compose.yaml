@@ -5,7 +5,16 @@ services:
     image: survey-bot:latest
     build:
       context: .
-      dockerfile: ./Dockerfile
+      dockerfile: ./survey-bot/Dockerfile
     extra_hosts:
       - "host.docker.internal:host-gateway"
     container_name: telegram_survey_bot
+  list-bot:
+    restart: always
+    image: list-bot:latest
+    build:
+      context: .
+      dockerfile: ./list-bot/Dockerfile
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    container_name: telegram_list_bot

@@ -6,4 +6,4 @@ COPY --chown=node:node . ./
 
 # Install app dependencies
 RUN npm install --no-audit
-CMD ["node", "main.js"]
+CMD ["node", "./survey-bot/index.js"]

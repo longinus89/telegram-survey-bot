@@ -8,6 +8,7 @@
     "start": "node main.js"
   },
   "dependencies": {
+    "sqlite3": "^5.1.6",
     "telegraf": "^4.0.0"
   },
   "devDependencies": {

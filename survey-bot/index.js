@@ -2,8 +2,13 @@ import { Telegraf } from "telegraf";
 import { config } from "dotenv";
 config();
 
-const TELEGRAM_BOT_KEY = process.env.TELEGRAM_BOT_KEY;
-const bot = new Telegraf(process.env.TELEGRAM_BOT_KEY);
+const SURVEY_BOT_KEY = process.env.SURVEY_BOT_KEY;
+if (!SURVEY_BOT_KEY) {
+  console.log('Bot key is not defined.');
+  process.exit(1);
+}
+
+const bot = new Telegraf(SURVEY_BOT_KEY);
 
 // Define the different states of the state machine
 const states = {
@@ -85,4 +90,4 @@ bot.on("message", async (ctx) => {
 // Start the bot
 bot.launch();
 
-console.log("Bot server started");
+console.log("Survey bot server started");
